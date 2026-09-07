@@ -1,0 +1,243 @@
+:root {
+  --bg: #0a0908;
+  --panel: #17120f;
+  --panel-edge: #2a201b;
+  --parchment: #e8ded0;
+  --parchment-dim: #a89a89;
+  --blood: #7d1c1c;
+  --blood-bright: #a8281f;
+  --candle: #c99a3c;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--parchment);
+  font-family: "Crimson Text", serif;
+  font-size: 18px;
+}
+
+body {
+  background-image:
+    radial-gradient(circle at 20% 10%, rgba(201, 154, 60, 0.05), transparent 40%),
+    radial-gradient(circle at 80% 90%, rgba(125, 28, 28, 0.08), transparent 45%);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-shell {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 48px 20px;
+}
+
+.brand {
+  font-family: "UnifrakturCook", cursive;
+  font-size: 3.4rem;
+  color: var(--parchment);
+  text-shadow: 0 0 18px rgba(201, 154, 60, 0.35), 0 0 2px #000;
+  margin: 0 0 4px 0;
+  letter-spacing: 1px;
+}
+
+.tagline {
+  color: var(--parchment-dim);
+  font-style: italic;
+  margin-bottom: 40px;
+  font-size: 1.05rem;
+}
+
+.card {
+  background: var(--panel);
+  border: 1px solid var(--panel-edge);
+  border-top: 2px solid var(--blood);
+  border-radius: 3px;
+  padding: 36px 32px;
+  width: 100%;
+  max-width: 420px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6);
+}
+
+.card h2 {
+  font-family: "Crimson Text", serif;
+  font-weight: 600;
+  font-size: 1.5rem;
+  margin: 0 0 24px 0;
+  color: var(--parchment);
+}
+
+label {
+  display: block;
+  font-size: 0.9rem;
+  color: var(--parchment-dim);
+  margin-bottom: 6px;
+  margin-top: 16px;
+}
+
+input {
+  width: 100%;
+  background: #0d0a08;
+  border: 1px solid var(--panel-edge);
+  color: var(--parchment);
+  padding: 10px 12px;
+  border-radius: 2px;
+  font-family: "Crimson Text", serif;
+  font-size: 1rem;
+}
+
+input:focus {
+  outline: none;
+  border-color: var(--candle);
+  box-shadow: 0 0 0 1px var(--candle);
+}
+
+button {
+  margin-top: 24px;
+  width: 100%;
+  background: var(--blood);
+  color: var(--parchment);
+  border: none;
+  padding: 12px;
+  font-family: "Crimson Text", serif;
+  font-size: 1.05rem;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  border-radius: 2px;
+  transition: background 0.15s ease;
+}
+
+button:hover:not(:disabled) {
+  background: var(--blood-bright);
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+button.secondary {
+  background: transparent;
+  border: 1px solid var(--panel-edge);
+  color: var(--parchment-dim);
+}
+
+button.secondary:hover:not(:disabled) {
+  border-color: var(--candle);
+  color: var(--candle);
+  background: transparent;
+}
+
+.switch-link {
+  margin-top: 20px;
+  text-align: center;
+  color: var(--parchment-dim);
+  font-size: 0.9rem;
+}
+
+.switch-link a {
+  color: var(--candle);
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.switch-link a:hover {
+  text-decoration: underline;
+}
+
+.error-msg {
+  margin-top: 16px;
+  color: #d47070;
+  font-size: 0.9rem;
+  border-left: 2px solid var(--blood);
+  padding-left: 10px;
+}
+
+.success-msg {
+  margin-top: 16px;
+  color: var(--candle);
+  font-size: 0.9rem;
+}
+
+.dashboard {
+  width: 100%;
+  max-width: 720px;
+}
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 28px;
+}
+
+.dashboard-header h1 {
+  font-family: "UnifrakturCook", cursive;
+  font-size: 2.2rem;
+  margin: 0;
+}
+
+.section-title {
+  font-size: 1.1rem;
+  color: var(--parchment-dim);
+  margin: 32px 0 12px 0;
+  border-bottom: 1px solid var(--panel-edge);
+  padding-bottom: 8px;
+}
+
+.account-row, .statement-row {
+  background: var(--panel);
+  border: 1px solid var(--panel-edge);
+  border-radius: 2px;
+  padding: 14px 18px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.account-name {
+  font-weight: 600;
+}
+
+.account-meta {
+  color: var(--parchment-dim);
+  font-size: 0.85rem;
+}
+
+.file-drop {
+  border: 1px dashed var(--panel-edge);
+  border-radius: 2px;
+  padding: 30px;
+  text-align: center;
+  color: var(--parchment-dim);
+  margin-top: 12px;
+  cursor: pointer;
+}
+
+.file-drop:hover {
+  border-color: var(--candle);
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  color: var(--parchment-dim);
+  font-size: 0.8rem;
+  letter-spacing: 0.5px;
+  border-top: 1px solid var(--panel-edge);
+}
+
+.download-btn {
+  margin-top: 0;
+  width: auto;
+  padding: 8px 14px;
+  font-size: 0.85rem;
+}
